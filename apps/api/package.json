@@ -1,0 +1,25 @@
+{
+  "name": "@ledger-sentinel/api",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@ai-sdk/anthropic": "^0.0.56",
+    "@ai-sdk/google": "^0.0.55",
+    "@ledger-sentinel/shared": "*",
+    "ai": "^3.4.33",
+    "drizzle-orm": "^0.38.3",
+    "hono": "^4.6.14",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241230.0",
+    "drizzle-kit": "^0.30.1",
+    "typescript": "^5.6.2",
+    "wrangler": "^3.99.0"
+  }
+}

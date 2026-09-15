@@ -1,0 +1,26 @@
+{
+  "name": "ledger-sentinel-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "LedgerSentinel: Autonomous Settlement Reconciliation Engine for CAS Practices",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspaces",
+    "build": "npm run build --workspaces",
+    "lint": "npm run lint --workspaces",
+    "typecheck": "npm run typecheck --workspaces"
+  },
+  "keywords": [
+    "fintech",
+    "accounting",
+    "ai-agents",
+    "cloudflare-workers",
+    "hono",
+    "double-entry"
+  ],
+  "author": "Isaiah Adesina",
+  "license": "UNLICENSED"
+}
