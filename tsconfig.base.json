@@ -12,6 +12,11 @@
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
     "declarationMap": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@settlement-agent/shared": ["packages/shared/src/index.ts"],
+      "@settlement-agent/shared/*": ["packages/shared/src/*"]
+    }
   }
 }

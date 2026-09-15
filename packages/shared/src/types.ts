@@ -39,6 +39,7 @@ export interface MathGateValidationResult {
   statedNet: number;
   validationTimestamp: string;
   violations: string[];
+  repairPrompt?: string;
 }
 
 export type BatchStatus = 
