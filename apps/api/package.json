@@ -1,5 +1,5 @@
 {
-  "name": "@ledger-sentinel/api",
+  "name": "@settlement-agent/api",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,7 +10,7 @@
   "dependencies": {
     "@ai-sdk/anthropic": "^0.0.56",
     "@ai-sdk/google": "^0.0.55",
-    "@ledger-sentinel/shared": "*",
+    "@settlement-agent/shared": "*",
     "ai": "^3.4.33",
     "drizzle-orm": "^0.38.3",
     "hono": "^4.6.14",

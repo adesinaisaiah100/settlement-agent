@@ -1,8 +1,8 @@
 {
-  "name": "ledger-sentinel-monorepo",
+  "name": "settlement-agent-monorepo",
   "version": "0.1.0",
   "private": true,
-  "description": "LedgerSentinel: Autonomous Settlement Reconciliation Engine for CAS Practices",
+  "description": "Settlement Agent: Autonomous Payout Reconciliation Engine for CAS Practices",
   "workspaces": [
     "apps/*",
     "packages/*"

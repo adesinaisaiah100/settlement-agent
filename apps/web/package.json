@@ -1,5 +1,5 @@
 {
-  "name": "@ledger-sentinel/web",
+  "name": "@settlement-agent/web",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -10,7 +10,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@ledger-sentinel/shared": "*",
+    "@settlement-agent/shared": "*",
     "@tanstack/react-table": "^8.20.5",
     "clsx": "^2.1.1",
     "lucide-react": "^0.469.0",
