@@ -22,5 +22,8 @@
     "double-entry"
   ],
   "author": "Isaiah Adesina",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@rollup/rollup-win32-x64-msvc": "4.63.3"
+  }
 }
