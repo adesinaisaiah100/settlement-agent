@@ -46,7 +46,7 @@ export async function parsePayoutPayload(
   rawPayload: string | Record<string, any>,
   options: ParsePayoutOptions = {}
 ): Promise<DeconstructedPayout> {
-  const model = options.model ?? google('gemini-1.5-flash');
+  const model = options.model ?? google('gemini-2.5-flash');
 
   const payloadString = typeof rawPayload === 'string' 
     ? rawPayload 
