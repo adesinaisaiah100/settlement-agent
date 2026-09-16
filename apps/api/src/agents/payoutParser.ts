@@ -1,6 +1,15 @@
 import { generateObject, LanguageModel } from 'ai';
-import { google } from '@ai-sdk/google';
+import { createGoogleGenerativeAI } from '@ai-sdk/google';
 import { DeconstructedPayout, DeconstructedPayoutSchema, COA } from '@settlement-agent/shared';
+
+// Support either GEMINI_API_KEY or GOOGLE_GENERATIVE_AI_API_KEY
+const getGoogleModel = () => {
+  const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_GENERATIVE_AI_API_KEY;
+  const google = createGoogleGenerativeAI({
+    apiKey: apiKey || 'dummy-key-for-offline-build',
+  });
+  return google('gemini-2.5-flash');
+};
 
 export interface ParsePayoutOptions {
   model?: LanguageModel;
@@ -46,7 +55,7 @@ export async function parsePayoutPayload(
   rawPayload: string | Record<string, any>,
   options: ParsePayoutOptions = {}
 ): Promise<DeconstructedPayout> {
-  const model = options.model ?? google('gemini-2.5-flash');
+  const model = options.model ?? getGoogleModel();
 
   const payloadString = typeof rawPayload === 'string' 
     ? rawPayload 

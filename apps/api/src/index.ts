@@ -1,3 +1,13 @@
+// Safely load .env file if present in Node runtime
+try {
+  // @ts-ignore
+  if (typeof process.loadEnvFile === 'function') {
+    process.loadEnvFile();
+  }
+} catch {
+  // .env file is optional
+}
+
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 import { validateMathGate } from './gates/mathGate';

@@ -4,6 +4,7 @@ import { parsePayoutPayload } from '../agents/payoutParser';
 import { XeroConnector, XeroAuthCredentials } from '../lib/connectors/xeroConnector';
 import { QBOConnector, QBOAuthCredentials } from '../lib/connectors/qboConnector';
 import { SettlementTelemetry } from '../telemetry/langfuse';
+import { EscalationNotifier } from '../lib/notifications/escalationNotifier';
 
 export interface WorkflowOptions {
   targetLedger?: 'XERO' | 'QBO' | 'NONE';
@@ -160,6 +161,20 @@ export async function executeReconciliationWorkflow(
       erpJournalId: qboRes.journalEntryId,
       escalationReason,
     };
+  }
+
+  // Step 6: Dispatch Human Escalation Alert if Math Gate verification failed after all retries
+  if (!isMathVerified && latestPayout && latestMathResult) {
+    const notifier = new EscalationNotifier();
+    await notifier.notifyHumanReviewRequired({
+      batchId,
+      processor,
+      attemptsTaken: Math.min(currentAttempt, maxAttempts),
+      delta: latestMathResult.delta,
+      violations: latestMathResult.violations,
+      payout: latestPayout,
+      xeroDraftId: ledgerStaging.erpJournalId,
+    });
   }
 
   return {
