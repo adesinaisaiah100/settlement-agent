@@ -3,10 +3,14 @@ import { cors } from 'hono/cors';
 import { validateMathGate } from './gates/mathGate';
 import { parsePayoutPayload } from './agents/payoutParser';
 import { DeconstructedPayoutSchema } from '@settlement-agent/shared';
+import webhooks from './routes/webhooks';
 
 const app = new Hono();
 
 app.use('*', cors());
+
+// Gateway Webhooks (Stripe payout.paid, Shopify feeds, Settlement simulations)
+app.route('/api/webhooks', webhooks);
 
 app.get('/health', (c) => {
   return c.json({
