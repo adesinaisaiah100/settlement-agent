@@ -11,7 +11,8 @@
     "dev": "npm run dev --workspaces",
     "build": "npm run build --workspaces",
     "lint": "npm run lint --workspaces",
-    "typecheck": "npm run typecheck --workspaces"
+    "typecheck": "npm run typecheck --workspaces",
+    "test": "npx tsx apps/api/test/mathGate.test.ts && npx tsx apps/api/test/connectorsAndWorkflow.test.ts && npx tsx apps/api/test/e2eWebhookReconciliation.test.ts"
   },
   "keywords": [
     "fintech",
