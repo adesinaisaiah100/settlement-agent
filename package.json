@@ -1,8 +1,8 @@
 {
-  "name": "ledger-sentinel-monorepo",
+  "name": "settlement-agent-monorepo",
   "version": "0.1.0",
   "private": true,
-  "description": "LedgerSentinel: Autonomous Settlement Reconciliation Engine for CAS Practices",
+  "description": "Settlement Agent: Autonomous Payout Reconciliation Engine for CAS Practices",
   "workspaces": [
     "apps/*",
     "packages/*"
@@ -11,7 +11,8 @@
     "dev": "npm run dev --workspaces",
     "build": "npm run build --workspaces",
     "lint": "npm run lint --workspaces",
-    "typecheck": "npm run typecheck --workspaces"
+    "typecheck": "npm run typecheck --workspaces",
+    "test": "npx tsx apps/api/test/mathGate.test.ts && npx tsx apps/api/test/connectorsAndWorkflow.test.ts && npx tsx apps/api/test/e2eWebhookReconciliation.test.ts"
   },
   "keywords": [
     "fintech",
@@ -22,5 +23,8 @@
     "double-entry"
   ],
   "author": "Isaiah Adesina",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@rollup/rollup-win32-x64-msvc": "4.63.3"
+  }
 }

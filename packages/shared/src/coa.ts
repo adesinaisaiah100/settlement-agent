@@ -1,5 +1,5 @@
 /**
- * Standard Chart of Accounts (COA) Architecture for LedgerSentinel
+ * Standard Chart of Accounts (COA) Architecture for Settlement Agent
  * Strictly follows US GAAP 5-digit hierarchy
  */
 

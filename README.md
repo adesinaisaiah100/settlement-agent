@@ -1,8 +1,8 @@
-# 🏛️ LedgerSentinel
+# 🏛️ Settlement Agent
 
 > **Autonomous Multi-Stream Settlement & Reconciliation Engine for CAS Practices**
 
-LedgerSentinel eliminates the **"Net Payout Trap"** for high-growth e-commerce and multi-channel brands. It automatically ingests processor payouts (Stripe, Shopify, Mindbody), deconstructs lumped sums into gross sales, fees, and state sales taxes, verifies the fundamental double-entry invariant ($\sum \text{Debits} - \sum \text{Credits} \equiv 0.00$), and stages draft manual journals into Xero and QuickBooks Online.
+Settlement Agent eliminates the **"Net Payout Trap"** for high-growth e-commerce and multi-channel brands. It automatically ingests processor payouts (Stripe, Shopify, Mindbody), deconstructs lumped sums into gross sales, fees, and state sales taxes, verifies the fundamental double-entry invariant ($\sum \text{Debits} - \sum \text{Credits} \equiv 0.00$), and stages draft manual journals into Xero and QuickBooks Online.
 
 ---
 
@@ -22,7 +22,7 @@ LedgerSentinel eliminates the **"Net Payout Trap"** for high-growth e-commerce a
 ## 📁 Repository Structure
 
 ```
-ledger-sentinel/
+settlement-agent/
 ├── apps/
 │   ├── web/          # React + Vite Frontend Dashboard
 │   └── api/          # Hono + Cloudflare Workflows Edge Backend
